@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+
+        <div class="panelBar">
+        <ul class="toolBar">
+            <li><a style="" auth-act class="icon" href="{% url '_position_Csv' %}" target="dwzExport" title="导出Excel"><span>导出Excel</span></a></li>
+        </ul>
+    </div>
+
+    <table context-menu-id="act-list-rMenu" class="table" style="width:100%" layouth="140">
+        <thead style="text-align:center">
+            <tr>
+                <th width="22"><input type="checkbox" group="ids" class="checkboxCtrl"></th>
+                <th>商品编号</th>
+                <th>商品名称</th>
+                <th>商品规格</th>
+                <th>生产厂家</th>
+                <th>数量</th>
+                <th>单位名称</th>
+                <th>保质期</th>
+                <th>批号</th>
+                <th>入库日期</th>
+            </tr>
+        </thead>
+            <tbody style="text-align:center">
+                {% for item in Position %}
+                    <tr>
+                        <td><input name="ids" value="{{item.ID" type="checkbox"></td>
+                        <td title="{{ item.spbh }}">{{ item.spbh }}</td>
+                        <td title="{{ item.spmch }}">{{ item.spmch }}</td>
+                        <td title="{{ item.shpgg }}">{{ item.shpgg }}</td>
+                        <td title="{{ item.shengccj }}">{{ item.shengccj }}</td>
+                        <td title="{{ item.shl }}">{{ item.shl }}</td>
+                        <td title="{{ item.dwmch }}">{{ item.dwmch }}</td>
+                        <td title="{{ item.sxrq }}">{{ item.sxrq }}</td>
+                        <td title="{{ item.pihao2 }}">{{ item.pihao2 }}</td>
+                        <td title="{{ item.rkrq }}">{{ item.pihao2 }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+
+</div>
+</body>
+</html>

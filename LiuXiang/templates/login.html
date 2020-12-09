@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'dwz/themes/css/login.css' %}" >
+</head>
+  <form class="form-horizontal" action="{% url '_login_page' %}" method="post">
+    <div class="login" >
+        <!-- 控制垂直居中 -->
+        <div style="margin-top: 500px">
+            <h3>欢迎使用</h3>
+               {% csrf_token %}
+                <div class="form-group" >
+                    <input type="text" name="user" value="" class="form-control user_obj" placeholder="用户名" required="" autocomplete="off">
+                </div>
+                <span style="display: block;margin-bottom: 10px;color:red" id="user_error"></span>
+                <div class="form-group">
+                    <input type="password" name="pwd" value="" class="form-control pwd_obj" placeholder="密码" required="" autocomplete="off">
+                </div>
+                <span style="display: block;margin-bottom: 10px;color:red" id="pwd_error"></span>
+                <button type="submit" class="btn btn-info block full-width m-b btn_obj">登 录</button>
+        </div>
+    </div>
+  </form>
+<body>
+
+</body>
+</html>
